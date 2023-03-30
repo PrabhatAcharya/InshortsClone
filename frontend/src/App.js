@@ -1,15 +1,18 @@
 import Header from './component/Header'
-// import './App.css';
-import { Outlet } from 'react-router-dom';
-
+import InfoHeader from './component/InfoHeader';
+import {Box,styled} from "@mui/material/";
+const Container=styled(Box)`
+width:60%;
+margin: 44px auto 0 auto;
+`;
 function App() {
   return (
-    <div>
+    <Box>
       <Header />
-      <main className='pt-16 bg-slate-100 min-h-[calc(100vh)]'>
-        <Outlet />
-      </main>
-    </div>
+      <Container>
+        <InfoHeader />
+      </Container>
+    </Box>
   );
 }
 

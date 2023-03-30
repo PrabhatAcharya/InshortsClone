@@ -1,67 +1,33 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../asset/logo.png";
-import { GrUser } from "react-icons/gr";
-import {
-  HiOutlineAnnotation,
-  HiOutlineUserCircle,
-  HiShoppingCart,
-} from "react-icons/hi";
-export default function Header() {
-  const [showMenu, setShowMenu] = useState(false);
-  const handleShowMenu = () => {
-    setShowMenu(!showMenu);
-  };
+import React from 'react';
+import {AppBar,Toolbar,styled} from '@mui/material';
+import { Menu } from '@mui/icons-material';
+const StyledHeader=styled(AppBar)`
+   background:#fff;
+   height:70px;
+`;
+const MenuIcon=styled(Menu)`
+  color: #000;
+`;
+//to use html tag in styled component we need to to weite in between singeQuote
+const Image=styled('img')({
+  height: 55,
+  margin:'auto',
+  // paddingRight:70
+});
 
+function Header() {
+  const url =
+    "https://assets.inshorts.com/website_assets/images/logo_inshorts.png";
   return (
-    <header className="fixed shadow-md w-full h-16 px-2 md:px-4 z-50 bg-white">
-      {/* desktop */}
-      <div className="flex items-center h-full justify-between">
-        <Link to={""}>
-          <div className="h-10 ">
-            <img src={logo} className="h-full" />
-          </div>
-        </Link>
-        <div className="flex item-center gap-4 md:gap-7">
-          <nav className="flex gap-4 md:gap-7 text-base md:text-lg">
-            <Link to={""}>Home</Link>
-            <Link to={"menu"}>Menu</Link>
-            <Link to={"about"}>About</Link>
-            <Link to={"contact"}>Contact</Link>
-          </nav>
-          <div className="text-3xl text-slate-600 relative ">
-            <HiShoppingCart />
-            <div className="absolute -top-1  -right-2 text-white bg-red-500 h-4 w-4 rounded-full m-0 p-0 text-sm text-center">
-              0
-            </div>
-          </div>
-          <div className="text-2xl text-slate-600" onClick={handleShowMenu}>
-            <div className="text-3xl cursor-pointer">
-              <HiOutlineUserCircle />
-            </div>
-            {showMenu && (
-              <div
-                to={"login"}
-                className="absolute right-2 bg-white py-2 px-2 shadow drop-shadow-md flex flex-col"
-              >
-                <Link
-                  to={"newproduct"}
-                  className="whitespace-nowrap cursor-pointer text-xl"
-                >
-                  NewProduct
-                </Link>
-                <Link
-                  to={"login"}
-                  className="whitespace-nowrap cursor-pointer text-xl"
-                >
-                  Login
-                </Link>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-      {/* mobile */}
-    </header>
+    <div>
+      <StyledHeader position='static'>
+        <Toolbar>
+          <MenuIcon />
+          <Image src={url} alt="logo" />
+        </Toolbar>
+      </StyledHeader>
+    </div>
   );
 }
+
+export default Header
