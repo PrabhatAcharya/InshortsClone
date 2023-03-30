@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "cloneInshortBackend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrabhatAcharya/Fullstack_MERN_App.git"
+  },
+  "author": "Prabhat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrabhatAcharya/Fullstack_MERN_App/issues"
+  },
+  "homepage": "https://github.com/PrabhatAcharya/Fullstack_MERN_App#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
