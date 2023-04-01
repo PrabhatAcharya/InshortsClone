@@ -1,1 +1,1 @@
-# Fullstack_MERN_App
+#Inshorts Clone
