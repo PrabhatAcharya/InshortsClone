@@ -5,7 +5,7 @@ import Connection from './database/db.js';
 import DefaultData from './default.js';
 import Route from './routes/routes.js';
 import dotenv from 'dotenv';
-const path = require('path');
+import path from 'path';
 
 const app = express();
 dotenv.config();
@@ -15,11 +15,11 @@ app.use(cors());
 app.use('/',Route);
 
 //static files
-app.use(express.static(path.join(__dirname,'../client/build')))
+// app.use(express.static(path.join(__dirname,'../client/build')))
 
-app.get('*',function(req, res){
-    res.sendFile(path.join(__dirname,'../client/build/index.html'));
-})
+// app.get('*',function(req, res){
+//     res.sendFile(path.join(__dirname,'../client/build/index.html'));
+// })
 
 const PORT = process.env.PORT || 8080;
 const username=process.env.DB_USERNAME;
